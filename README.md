@@ -8,19 +8,17 @@ This project was developed using the so-called `src layout`: see [here](https://
 
 ### 📃 Project Metadata
 
-The [`pyproject.toml`](./setup.cfg) file contains all the metadata for the project, including the project name, version, author, description, supported Python version, and more.
+The [`pyproject.toml`](./pyproject.toml) file contains all the metadata for the project, including the project name, version, author, description, supported Python version, and more.
 
 ### 📦 Dependencies
 
-The project uses `setuptools` to manage dependencies.
-
-All dependencies are listed in the `requirements.txt` file. This file is typically generated using the command:
+All dependencies are listed in the [`requirements.txt`](./requirements.txt) file. This file is typically generated using the command:
 
 ```bash
 $ python -m pip freeze > requirements.txt
 ```
 
-Instead, the `install_requires` keyword within the [`setup.cfg`](./setup.cfg) file [should be used to specify what the project minimally needs to run correctly](https://packaging.python.org/en/latest/discussions/install-requires-vs-requirements/#install-requires).
+Instead, the `project.dependencies` keyword within the [`pyproject.toml`](./pyproject.toml) file should be used to specify what the project minimally needs to run correctly.
 
 ### 🧪 Testing
 
@@ -68,7 +66,7 @@ $ python -m pip install -e .
 $ python src/python_project_boilerplate/main.py
 ```
 
-or using the console script defined in the [setup.cfg](./setup.cfg) file:
+or using the console script defined in the [pyproject.toml](./pyproject.toml) file:
 
 ```bash
 $ python_project_boilerplate
