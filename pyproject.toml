@@ -1,6 +1,23 @@
 [build-system]
-requires = ["setuptools>=42.0", "wheel"]
+requires = ["setuptools>=62.0"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-project-boilerplate"
+version = "1.0.0"
+authors = [{ name = "compiuta srl", email = "info@compiuta.com" }]
+description = "Python project boilerplate"
+readme = { file = "README.md", content-type = "text/markdown" }
+keywords = ["project", "boilerplate"]
+license = { file = "LICENSE" }
+dependencies = ["requests>=2.28.1"]
+requires-python = ">= 3.7"
+
+[project.optional-dependencies]
+testing = ["pytest>=7.1.2"]
+
+[project.scripts]
+python_project_boilerplate = "python_project_boilerplate.main:main"
 
 [tool.pytest.ini_options]
 pythonpath = "."

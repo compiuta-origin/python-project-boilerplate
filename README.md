@@ -8,9 +8,7 @@ This project was developed using the so-called `src layout`: see [here](https://
 
 ### 📃 Project Metadata
 
-The [`setup.cfg`](./setup.cfg) file contains all the metadata for the project, including the project name, version, author, description, supported Python version, and more.
-
-The [`pyproject.tml`](./pyproject.toml) file contains build system requirements and information, which are used by pip to build the package.
+The [`pyproject.toml`](./setup.cfg) file contains all the metadata for the project, including the project name, version, author, description, supported Python version, and more.
 
 ### 📦 Dependencies
 
