@@ -2,7 +2,7 @@
 
 We kept this project simple on purpose, it is intended as a starting point for any Python project: ML packages, backend microservices or whatever the best programming language in the world (🐍) is awesome for! For example, [we](https://www.compiuta.com)'ve used it to bootstrap multiple [Connhex](https://www.connhex.com) services.
 
-This project was developed using the so-called `src layout`: see [here](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/) for more details.
+This project was developed using [uv](https://docs.astral.sh/uv) package manager. In particular, we used the [uv packaged application concept](https://docs.astral.sh/uv/concepts/projects/#packaged-applications).
 
 ## ✨ Features
 
@@ -12,13 +12,11 @@ The [`pyproject.toml`](./pyproject.toml) file contains all the metadata for the 
 
 ### 📦 Dependencies
 
-All dependencies are listed in the [`requirements.txt`](./requirements.txt) file. This file is typically generated using the command:
+All dependencies are managed using `uv`. In order to add or remove dependencies, follow its [documentation](https://docs.astral.sh/uv/concepts/dependencies).
 
-```bash
-$ python -m pip freeze > requirements.txt
-```
+### 📝 Linting and formatting
 
-Instead, the `project.dependencies` keyword within the [`pyproject.toml`](./pyproject.toml) file should be used to specify what the project minimally needs to run correctly.
+We use [`ruff`](https://docs.astral.sh/ruff) for linting and formatting. The configuration can be customized in the [`pyproject.toml`](./pyproject.toml) file.
 
 ### 🧪 Testing
 
@@ -29,10 +27,8 @@ You can change the target tests folder by updating the `testpaths` variable in t
 To run the tests, simply use the following command:
 
 ```bash
-$ pytest
+$ uv run pytest
 ```
-
-> ⚠️ If you encouter the `ModuleNotFoundError: No module named 'python_project_boilerplate'` error when running this command, you're probably using the wrong `pytest` executable. If you have installed the dependencies in a virtual environment, you should use: `$ <path-to-env>/bin/pytest`.
 
 ### 🐳 Docker Support
 
@@ -48,28 +44,12 @@ This will create a Docker image with a `python-project-boilerplate` tag.
 
 ## 🎬 Getting started
 
-- Create a virtual environment using your favorite tool:
+- Install [uv](https://docs.astral.sh/uv/getting-started/installation)
+
+- Run the project:
 
 ```bash
-$ virtualenv -p python venv
-```
-
-- Install the project in [`editable`](https://setuptools.pypa.io/en/latest/userguide/development_mode.html) mode:
-
-```bash
-$ python -m pip install -e .
-```
-
-- Run:
-
-```bash
-$ python src/python_project_boilerplate/main.py
-```
-
-or using the console script defined in the [pyproject.toml](./pyproject.toml) file:
-
-```bash
-$ python_project_boilerplate
+$ uv run python_project_boilerplate
 ```
 
 ## 💻 License
