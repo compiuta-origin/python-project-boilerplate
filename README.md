@@ -46,6 +46,12 @@ This will create a Docker image with a `python-project-boilerplate` tag.
 
 - Install [uv](https://docs.astral.sh/uv/getting-started/installation)
 
+- Install `pre-commit` rules:
+
+```bash
+uv run pre-commit install
+```
+
 - Run the project:
 
 ```bash

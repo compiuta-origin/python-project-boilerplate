@@ -10,7 +10,11 @@ authors = [{ name = "Compiuta srl", email = "info@compiuta.com" }]
 dependencies = ["requests>=2.32.3"]
 
 [dependency-groups]
-dev = ["pytest>=8.3.3", "ruff>=0.7.3"]
+dev = [
+    "pre-commit>=4.0.1",
+    "pytest>=8.3.3",
+    "ruff>=0.7.3",
+]
 
 [project.scripts]
 python_project_boilerplate = "python_project_boilerplate.main:main"
